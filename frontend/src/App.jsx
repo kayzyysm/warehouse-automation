@@ -165,7 +165,7 @@ export default function App() {
     if (items.length === 0) return alert("ไม่มีรายการสินค้าให้ Confirm");
 
     try {
-      const response = await axios.post('http://localhost:5000/generate-receipt', { items }, {
+      const response = await axios.post('https://warehouse-automation.onrender.com/generate-receipt', { items }, {
         responseType: 'blob',
       });
 
@@ -188,7 +188,7 @@ export default function App() {
     const totalWeight = cart.reduce((sum, i) => sum + (i.weight * i.orderQty), 0).toFixed(2);
 
     try {
-      const response = await axios.post('http://localhost:5000/generate-outbound-receipt',
+      const response = await axios.post('https://warehouse-automation.onrender.com/generate-outbound-receipt',
         { cart, totalWeight },
         { responseType: 'blob' }
       );
