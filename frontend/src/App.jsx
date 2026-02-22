@@ -119,7 +119,7 @@ export default function App() {
 
   useEffect(() => {
     // ใส่ URL ที่ได้จาก Render หลังจาก Deploy Web Service เสร็จ
-    const API_URL = "https://your-backend-url.onrender.com";
+    const API_URL = "https://warehouse-automation.onrender.com";
 
     axios.get(`${API_URL}/api/racks`)
       .then(res => {
